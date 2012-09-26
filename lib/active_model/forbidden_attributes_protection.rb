@@ -7,7 +7,7 @@ module ActiveModel
       if !new_attributes.respond_to?(:permitted?) || new_attributes.permitted?
         super
       else
-        raise ActiveModel::ForbiddenAttributes, "Forbidden mass assignment of unfiltered parameters to #{self.class}"
+        raise ActiveModel::ForbiddenAttributes, "Forbidden mass assignment of #{new_attributes} to #{self.class}"
       end
     end
   end
